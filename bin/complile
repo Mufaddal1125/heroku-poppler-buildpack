@@ -1,0 +1,15 @@
+#!/bin/bash
+
+# This script is herok build pack compile script
+
+$BUILD_DIR=$1
+
+# install popplert utils
+echo "-----> Updating apt-get"
+apt-get update
+echo "-----> Installing poppler-utils"
+apt-get install -y poppler-utils
+echo "poppler-utils installed"
+path=$(which pdftotext)
+path=$(dirname $path)
+echo "poppler utils available at $path"
